@@ -1,0 +1,12 @@
+
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Update Issue Status</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}  {# Renders all fields including 'status' #}
+    <button type="submit">Update status</button>
+  </form>
+{% endblock %}

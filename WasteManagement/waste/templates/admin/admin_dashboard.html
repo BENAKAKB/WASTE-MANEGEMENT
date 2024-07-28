@@ -1,0 +1,65 @@
+
+{% extends 'base.html' %}
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block content %}
+<h2>Admin Dashboard</h2>
+
+<h3>Waste Issues</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Issue Type</th>
+            <th>Description</th>
+            <th>Location</th>
+            <th>Status</th>
+            <th>Reported Date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for issue in issues %}
+        <tr>
+            <td>{{ issue.issue_type }}</td>
+            <td>{{ issue.description }}</td>
+            <td>{{ issue.location }}</td>
+            <td>{{ issue.status }}</td>
+            <td>{{ issue.reported_date }}</td>
+            <td><a href="{% url 'admin_update_issue' issue.id %}">Update</a></td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="6">No issues reported yet.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<h3>Pickup Requests</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Item Description</th>
+            <th>Location</th>
+            <th>Status</th>
+            <th>Requested Date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for pickup in pickups %}
+        <tr>
+            <td>{{ pickup.item_description }}</td>
+            <td>{{ pickup.location }}</td>
+            <td>{{ pickup.status }}</td>
+            <td>{{ pickup.requested_date }}</td>
+            <td><a href="{% url 'admin_update_pickup' pickup.id %}">Update</a></td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="5">No pickup requests yet.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

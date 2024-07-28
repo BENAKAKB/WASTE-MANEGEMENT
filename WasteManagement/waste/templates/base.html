@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Community Waste Management{% endblock %}</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Custom styles -->
+    <style>
+        body {
+            padding-top: 80px;
+            /* Increased padding for the header */
+        }
+
+        .navbar {
+            font-size: 18px;
+            /* Increased font size for navbar links */
+        }
+
+        .header-background {
+            background-color: #343a40;
+            /* Dark background color */
+        }
+
+        .header-background .navbar-brand {
+            font-size: 24px;
+            /* Larger font size for the brand/logo */
+
+
+        }
+
+        .jumbotron {
+            background-image: url('https://static.vecteezy.com/system/resources/previews/004/341/571/original/waste-management-eco-friendly-living-2d-web-banner-poster-garbage-separation-man-and-woman-sorting-trash-flat-characters-on-cartoon-background-printable-patches-colorful-web-elements-vector.jpg');
+            /* Replace with your background image path */
+            background-size: cover;
+            background-position: center;
+            opacity: 0.7;
+            /* Adjust opacity as needed */
+            color: #ffffff;
+            /* Light text color */
+            padding: 100px 20px 300px;
+            /* Padding inside the jumbotron */
+            margin-bottom: 0;
+            /* Remove default bottom margin */
+        }
+
+        .jumbotron h1 {
+            color: darkgreen;
+            /* Text color inside the jumbotron */
+            font-weight: 600;
+            
+            font-family: "Syne", sans-serif;
+            /* font-optical-sizing: auto; */
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        .footer {
+            background-color: #343a40;
+            /* Dark background color for the footer */
+            color: #ffffff;
+            /* Light text color for the footer */
+            padding-top: 20px;
+        }
+
+        .footer a {
+            color: #ffffff;
+            /* Link color in the footer */
+        }
+
+        .card {
+            height: 100%;
+            /* Make all cards in a row of equal height */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card img {
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover img {
+            opacity: 0.6;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Syne:wght@400..800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top header-background">
+            <div class="container">
+                <a class="navbar-brand" href="{% url 'home' %}">Community Waste Management</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'home' %}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'about' %}">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'login' %}">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'admin_dashboard' %}">Admin Dashboard</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- End Navbar -->
+    </header>
+
+    <main>
+        {% block content %}
+        <div class="jumbotron">
+            <div class="container">
+                <h1 class="display-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Welcome to Community Waste &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Management</h1>
+            </div>
+        </div>
+
+
+        <section class="container">
+            <div class="row">
+                <div>
+                    <h2 style="font-family: Syne, sans-serif;
+                    font-optical-sizing: auto; 
+                    font-weight: 700;
+                    font-style: normal;
+                    text-align: center;
+                    margin-top: 50px;   ">Waste Management </h2> <br>
+                    <p style="font-family: EB Garamond, serif;
+                    font-optical-sizing: auto;
+                    font-weight: 400;
+                    font-style: normal;
+                    font-size: larger">Waste management involves the collection, transportation, and disposal of garbage,
+                        sewage, and other waste products. Effective waste management is crucial for maintaining
+                        cleanliness, preventing environmental pollution, and promoting sustainable development.</p>
+                    <p style="font-family: EB Garamond, serif;
+                    font-optical-sizing: auto;
+                    font-weight: 400;
+                    font-style: normal;
+                    font-size: larger">Proper waste management practices include recycling, composting, and safe disposal methods to
+                        minimize the impact on our environment. By managing waste responsibly, we can contribute to a
+                        healthier and cleaner community for future generations.</p>
+
+                </div>
+            </div>
+        </section>
+
+        <br> <br>
+
+        <section class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://thumbs.dreamstime.com/b/garbage-dump-landfill-vector-urban-landscape-background-symbol-pollution-environment-illustration-90858469.jpg"
+                            class="card-img-top" alt="Card image">
+                        <div class="card-body">
+                            <h4 style="font-family: Syne, sans-serif;
+                            font-optical-sizing: auto; 
+                            font-weight: 700;
+                            font-style: normal;
+                            text-align: center;
+                            margin-top: 7px; ">Landfill</h4>
+                            <p class="card-text">A landfill is a managed site where waste is buried under the ground. It's a method used for garbage disposal that aims to control environmental impact.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://thumbs.dreamstime.com/b/incineration-plant-garbage-truck-waste-factory-trash-transportation-recycling-rubbish-disposal-smoke-pipes-nature-pollution-290590901.jpg"
+                            class="card-img-top" alt="Card image">
+                        <div class="card-body">
+                            <h4 style="font-family: Syne, sans-serif;
+                            font-optical-sizing: auto; 
+                            font-weight: 700;
+                            font-style: normal;
+                            text-align: center;
+                            margin-top: 7px; ">Incineration</h4>
+                            <p class="card-text">Incineration is a waste treatment process that involves the combustion of organic substances contained in waste materials. It is used to convert waste into ash, flue gas, and heat.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://img.freepik.com/free-vector/hand-drawn-biogas-illustration_23-2149408845.jpg?w=360"
+                            class="card-img-top" alt="Card image">
+                        <div class="card-body">
+                            <h4 style="font-family: Syne, sans-serif;
+                            font-optical-sizing: auto; 
+                            font-weight: 700;
+                            font-style: normal;
+                            text-align: center;
+                            margin-top: 7px; ">Biogas</h4>
+                            <p class="card-text">Biogas is a renewable energy produced from the anaerobic digestion of organic waste, mainly consisting of methane and carbon dioxide.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://media.istockphoto.com/id/1688393591/vector/pyrolysis-process-with-biochar-sequestration.jpg?s=612x612&w=0&k=20&c=6gwm6M03y-S7_XpEWAUsBVo398KG62ZevcOx23pyW_s="
+                            class="card-img-top" alt="Card image">
+                        <div class="card-body">
+                            <h4 style="font-family: Syne, sans-serif;
+                            font-optical-sizing: auto; 
+                            font-weight: 700;
+                            font-style: normal;
+                            text-align: center;
+                            margin-top: 7px; ">Pyrolysis</h4>
+                            <p class="card-text">Pyrolysis and gasification are innovative technologies transforming waste into valuable resources through controlled thermal decomposition.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://us.123rf.com/450wm/mnbxgraphics/mnbxgraphics1909/mnbxgraphics190900027/129482378-hand-drawn-zero-waste-banner-ecological-lifestyle-vector-illustration-in-modern-trendy-flat-cartoon.jpg"
+                            class="card-img-top" alt="Card image">
+                        <div class="card-body">
+                            <h4 style="font-family: Syne, sans-serif;
+                            font-optical-sizing: auto; 
+                            font-weight: 700;
+                            font-style: normal;
+                            text-align: center;
+                            margin-top: 7px; ">Composting</h4>
+                            <p class="card-text">Composting enriches soil health by recycling organic waste into nutrient-rich fertilizer, promoting sustainable agriculture.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoYHV1SW8UpiGJlFjpstdpYyOc0L8bYf94lw&s"
+                            class="card-img-top" alt="Card image">
+                        <div class="card-body">
+                            <h4 style="font-family: Syne, sans-serif;
+                            font-optical-sizing: auto; 
+                            font-weight: 700;
+                            font-style: normal;
+                            text-align: center;
+                            margin-top: 7px; ">Recycling</h4>
+                            <p class="card-text">"Reduce, reuse, recycle: Sustainable actions for a cleaner future."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% endblock %}
+    </main>
+
+    <br>
+    <br>
+
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="footer-content">
+                        <h5 class="text-uppercase mb-4">Contact Us</h5>
+                        <div class="footer-contact">
+                            <p><i class="fas fa-phone-alt"></i> Mobile: +91 9876543210</p>
+                            <p><i class="fab fa-facebook"></i> <a
+                                    href="https://www.facebook.com/communitywastemanagement">Facebook</a></p>
+                            <p><i class="fab fa-twitter"></i> <a
+                                    href="https://www.twitter.com/communitywaste">Twitter</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="footer-content">
+                        <h5 class="text-uppercase mb-4">About Us</h5>
+                        <p>Community Waste Management Office,<br>
+                            BBMP Building, <br>
+                            Bangalore, Karnataka, India</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

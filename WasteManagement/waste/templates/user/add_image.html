@@ -1,0 +1,15 @@
+<!-- templates/user/add_image.html -->
+{% extends 'base.html' %}
+{% block title %}Add Image{% endblock %}
+
+{% block content %}
+<h2>Add Image</h2>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="image">Choose Image:</label>
+        <input type="file" name="image" id="image">
+    </div>
+    <button type="submit" class="btn btn-primary">Upload</button>
+</form>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Login - Community Waste Management
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="text-center">Login</h2>
+                </div>
+                <div class="card-body">
+                    <form method="post" action="{% url 'login' %}">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
